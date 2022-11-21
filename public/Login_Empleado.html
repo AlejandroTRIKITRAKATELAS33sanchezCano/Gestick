@@ -34,14 +34,15 @@
                 
                 <div class="formulario">
                     <h1>GESTICK</h1>
-                    <form action="Productos_Index.html" id="formulario_v">
+                    <form action="/logEmpleado" method="post" id="formulario_v">
                         <div class="input-contenedor">
                             <i class="fa-solid fa-user icon"></i>
-                            <input type="text" placeholder="ID de Empleado">
+                            <input type="text" id="id" placeholder="ID de Empleado" name="user">
+                            <div id="invalmsgid"></div>
                         </div>
                         <div class="input-contenedor">
                             <i class="fas fa-key icon"></i>
-                            <input type="password" placeholder="Contraseña">
+                            <input type="password" placeholder="Contraseña" name="password">
                         </div>
                         <a href="">Soy Administrador</a>
                         <input type="submit" value="Iniciar Sesion" class="enviar">
@@ -50,10 +51,11 @@
 
                 <div class="registrar">
                     <h2>¿No tienes una cuenta?</h2>
-                    <a href="iniciar_sesion.html">Regístrate</a>
+                    <a href="/SignEmp">Regístrate</a>
                 </div>
             </div>
         </div>
     </section>
+    <script src="js/validation.js" type="text/javascript"></script>
 </body>
 </html>
