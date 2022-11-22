@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
+    <link rel="stylesheet" href="CSS/style-contacUs.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="CSS/button-message.js"></script>
+    <title>GESTICK</title>
+</head>
+<body>
+    <header>
+        <h2 class="logo">GESTICK</h2>
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="Contactanos.html">Contactanos</a>
+            <a href="Productos_Index.html">Perfil</a>
+            <label for="check" class="esconder-menu">
+                &#215
+            </label>
+        </nav>
+    </header>
+
+    <section class="Contactanos">
+        <div class="container-info-contactUs">
+            <div>
+                <h3 class="header-contactUs">Contactanos</h3>
+            </div>
+        </div>
+        <div class="contact-info">
+            <h3 class="header-map-us">Mapa:</h3>
+            <iframe class="map-us" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2584.426112154304!2d-99.17715073836213!3d19.454356541347096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1f89b182af359%3A0xd655fe13977c9ba2!2sPopotla!5e0!3m2!1ses-419!2smx!4v1667990507182!5m2!1ses-419!2smx" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <h1 class="h1-form">Envia un correo</h1>
+        <form class="form-style-7">
+            <ul>
+            <li>
+                <label for="name">Nombre</label>
+                <input type="text" name="name" maxlength="400">
+                <span>Ingresa tu nombre completo</span>
+            </li>
+            <li>
+                <label for="email">Email</label>
+                <input type="email" name="email" maxlength="400">
+                <span>Ingresa tu correo electronico</span>
+            </li>
+            <li>
+                <label for="url">Asunto</label>
+                <input type="url" name="url" maxlength="400">
+                <span>Ingrese el asunto de su mensaje</span>
+            </li>
+            <li>
+                <label for="bio">Mensaje</label>
+                <textarea name="bio" onkeyup="adjust_textarea(this)"></textarea>
+                <span>Ingrese su mensaje</span>
+            </li>
+            <li>
+                <div class="btn">
+                    <i class="fa fa-paper-plane-o fa-2x send" aria-hidden="true" style="font-size: 15px"></i>
+                     <i class="fa fa-paper-plane-o fa-2x send2" aria-hidden="true" style="font-size: 15px"></i>
+                     <p>Enviar</p>
+                </div>
+            </li>
+            </ul>
+            </form>
+    </section>
+    </div>
+</body>
+</html>
