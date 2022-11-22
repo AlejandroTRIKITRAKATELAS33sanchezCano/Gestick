@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Fredoka:wght@500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Fredoka', sans-serif;
+    
+}
+
+body{
+    overflow: hidden; /* Hide scrollbars */
+}
+
+/*:root{
+    var
+}*/
+
+/*Menu*/
+
+header{
+    height: 100px;
+    background: #283845;
+    padding: 0 50px;
+    color:aliceblue;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo{
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 200;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.menu a{
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+}
+
+.mostrar-menu, .esconder-menu{
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+    transition: 0,4s;
+}
+
+.mostrar-menu{
+    order: 1;
+}
+
+.menu a:hover, .mostrar-menu:hover , .esconder-menu:hover{
+    color: #01A7C2;
+}
+
+#check{
+    display: none;
+}
+
+
+/*Iconos*/
+
+#iconos{
+    padding: 0px 50px;
+    background:#283845;
+}
+.contenido-iconos{
+    padding: 50px 50px 0px 50px;
+    display:flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.contenido-iconos div{
+    flex:1;
+    margin: 20px 0px;
+    border-right: 2px solid rgba(100, 180, 191, 0.6);
+}
+.contenido-iconos div i{
+    color: #01A7C2;
+}
+.contenido-iconos div h6{
+    color:#fff;
+    font-size: 20px;
+    font-weight: 100;
+    margin: 10px 0px;
+}
+.contenido-iconos div p{
+    color:#01A7C2;
+    font-size: 15px;
+}
+
+/*===================================================================SOBRE NOSOTROS=====================================================================*/
+
+/*Equipo*/
+
+.contenedor{
+    position: relative;
+    width: 98.6vw;
+    height: 25vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#equipo{
+    padding:50px 50px;
+    display:flex;
+    justify-content:center;
+    text-align:center;
+}
+#equipo img{
+    border-radius: 10px;
+    height: auto;
+    width: auto;
+    max-width: 100px;
+    max-height: 100px;
+    border-color: #283845;
+    
+}
+#equipo div{
+    padding: 30px 30px;
+}
+#equipo div h4{
+    color: #283845;
+    font-size:20px;
+    margin: 15px 0px;
+}
+#equipo div p{
+    color: #283845;
+    font-size: 18px;
+}
+.saber-mas{
+    display:inline-block;
+    text-decoration:none;
+    color: #283845;
+    padding: 10px 30px;
+    border: 3px solid #283845;
+    border-radius: 30px;
+    margin-top: 15px;
+    transition: all 0.4s;
+}
+.saber-mas:hover{
+    background:#283845;
+    color: #ffffff;
+}
+
+/*Mision, Vision, Como nace*/
+
+#nosotros div{
+
+    display: block;
+    position: relative;
+    left: 700px;
+    margin: 50px;
+    width: 1231px;
+    height: 459px;
+    left: 129px;
+    background-color: rgba(196, 196, 196, 0.4);
+    border-radius: 50px;
+    padding: 30px;
+}
+
+#nosotros div h3{
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #01A7C2;
+}
+
+#nosotros div p{
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    text-align: center;
+    color: #000000;
+}
+
+
+/*=====================================================================SCROLL DOWN===========================================================================*/
+  main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    perspective: 2px;
+  }
+  
+  section {
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+  
+  .no-parallax {
+    background-color: #202c39;
+    z-index: 999;
+
+}
+
+.no-parallax2 {
+    background-color: #ffffff;
+    z-index: 999;
+  }
+  section h1 {
+    text-align: center;
+    font-size: 4rem;
+    font-family: sans-serif;
+  }
+  
+  .parallax h1 {
+    width: 60%;
+    font-size: 2rem;
+  }
+  
+  .parallax::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    transform: translateZ(-1px) scale(1.5);
+    background-size: 100%;
+    z-index: -1;
+  }
+  
+  .bg::after {
+    background: linear-gradient(rgba(255, 251, 251, 0.5), rgba(0, 0, 0, 0.5)),
+      url("https://picsum.photos/1080/720");/*Cambiar para cambiar fondo*/
+    background-size: cover;
+  }
+  
+  @media screen and (min-width: 768px) {
+    section h1 {
+      font-size: 8rem;
+    }
+    .parallax h1 {
+      font-size: 4rem;
+    }
+  }
+  /* Blur */
+.hover07 figure img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover07 figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+figure:hover+span {
+	bottom: -36px;
+	opacity: 1;
+}
+.text-h{
+    font-size: 34px;
+    padding: 1em;
+    text-align: center;
+    text-indent: 1em;
+    font-family: sans-serif;
+}
+
+
+ 
+/*=========================================================================RESPONSIVE==================================================================*/
+
+@media(max-width: 768px){
+    /*Menu*/
+    .mostrar-menu, .esconder-menu{
+        display: block;
+    }
+
+    .menu{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #283845;
+        right: -100%;
+        top:0;
+        text-align: center;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+    .menu a{
+        display:block;
+        padding: 20px;
+    }
+    .esconder-menu{
+        position:absolute;
+        top:40px;
+        right: 40px;
+    }
+    #check:checked ~ .menu{
+        right: 0;
+    }
+    /*Equipo*/
+
+    #personas{
+        flex-direction: column;
+    }
+
+    /*Registro*/
+
+    .registrarse,
+    .Registro{
+        margin: auto;
+        width: 500px;
+        margin-top: 150px;
+        border-radius: 2%;
+    }
+    /*Footer*/
+
+    .contenedor-footer{
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo{
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4{
+        border: none;
+    }
+
+    .content-foo p{
+        color: #ccc;
+        border-bottom: 1px solid #f2f2f2;
+        padding-bottom: 20px;
+    }
+
+    .titulo-final{
+        font-size: 20px;
+    }
+}
