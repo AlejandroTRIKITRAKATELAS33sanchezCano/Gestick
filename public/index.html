@@ -10,13 +10,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
     <!-- CUSTOM CSS -->
     <link rel="stylesheet" href="CSS/styleIndex.css">
 </head>
 
 <body>
+
 
     <div class="menu-btn">
         <i class="fas fa-bars fa-2x"></i>
@@ -28,10 +29,9 @@
             &#8801
         </label>
         <nav class="menu">
-            <a href="/">Inicio</a>
-            <a href="/aboutUs">Nosotros</a>
-            <a href="/contactUs">Contactanos</a>
-            <a href="/profile">Iniciar Sesión</a>
+            <a href="index.html">Inicio</a>
+            <a href="Contactanos.html">Contactanos</a>
+            <a href="Login_Empleado.html">Iniciar Sesión</a>
             <label for="check" class="esconder-menu">
                 &#215
             </label>
@@ -44,15 +44,24 @@
             <p>Con Gestick Todo es posible, Ordena tus Productos y Vendelos En ¡LINEA!
                 Olvidate de comisiones altas, Obten Tu propio Inventario a un super Precio
             </p>
+            <!--
             <a href="Registro_Empleado.html" class="btn">
                 Registrate <i class="fas fa-chevron-right"></i>
             </a>
+             -->
+            <a href="Registro_Empleado.html">
+                <button class="button2" type="submit">
+                    <span>Registrate</span>
+                </button>
+            </a>
+
+
         </header>
 
         <!-- NEWS CARDS -->
         <div class="news-cards">
             <div>
-                <img src="CSS/IMG/Decoración/Anuncio_1.webp" alt="" />
+                <img src="CSS/IMG/Decoración/negocio.webp" alt="" />
                 <h3>Crea Tu Propio Inventario Para Tu Negocio</h3>
                 <p>Con Nuestra Herramienta Gestick, puedes tener una mejor organización
                     y mejor rendimiento debido a sus mmultiples herramientas las cuales te permitiran
@@ -71,7 +80,7 @@
             <div>
                 <img src="CSS/IMG/Decoración/Personalizacion.webp" alt="" />
                 <h3>Personaliza Tu Espacio.</h3>
-                <p>Tienes la libertad de personalizar tu espacio de trabajo y así tener más 
+                <p>Tienes la libertad de personalizar tu espacio de trabajo y así tener más
                     pertenencia con el inventario que te da GESTICK
                 </p>
                 <a href="#">Explora Más <i class="fas fa-angle-double-right"></i></a>
@@ -90,10 +99,19 @@
         <section class="cards-banner-one">
             <div class="content">
                 <h2>Prueba Tu Mes Gratis</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat maxime facilis quasi alias illo,
-                    fugiat
-                    cupiditate porro dolores tenetur delectus!</p>
-                <a href="#" class="btn">Explora<i class="fas fa-chevron-right"></i></a>
+                <p>Prueba Gestick por todo un mes de forma gratuita,
+                    y obtén todos los benficios que ofrece este software.
+                    Gestick tan solo cuesta MXN x cantidad/mes. Durante el periodo de
+                    prueba, no se te cobrará, puedes cancelar en cualquier momento.</p>
+
+                <!--                    <a href="#" class="btn">Explora<i class="fas fa-chevron-right"></i></a>
+-->
+
+                <button class="button" type="submit">
+                    <span>Explora</span>
+                </button>
+
+
             </div>
         </section>
 
@@ -102,36 +120,41 @@
             <div>
                 <img src="CSS/IMG/Decoración/Cliente_1.webp" alt="" />
                 <h3>RC DUDE MX</h3>
-                <p>"Es una empresa totalmente responsble con una atención excelente y una manera de organizar mis productos de manera eficaz
+                <p>"Es una empresa totalmente responsble con una atención excelente y una manera de organizar mis
+                    productos de manera eficaz
                     a un super precio"
                 </p>
             </div>
             <div>
                 <img src="CSS/IMG/Decoración/Cliente_2.webp" alt="" />
                 <h3>Baratus</h3>
-                <p>"Ahora es más sencillo organizar mis productos listos para la compra de estos, facil de capacitación para los empleados a un buen precio
+                <p>"Ahora es más sencillo organizar mis productos listos para la compra de estos, facil de capacitación
+                    para los empleados a un buen precio
                     . No puedo esperar a ver la opción de E-Commerce"
                 </p>
             </div>
             <div>
                 <img src="CSS/IMG/Decoración/Cliente_3.webp" alt="" />
                 <h3>El Cuartel Secreto</h3>
-                <p>"Es el mejor inventario que he tenido, mis prodcutos son más organizados y es más facil que usar hojas de calculo, puedo gestionar bien a mis empleados"
+                <p>"Es el mejor inventario que he tenido, mis prodcutos son más organizados y es más facil que usar
+                    hojas de calculo, puedo gestionar bien a mis empleados"
                 </p>
             </div>
             <div>
                 <img src="CSS/IMG/Decoración/Cliente_4.webp" alt="" />
                 <h3>Guitar Store</h3>
-                <p>"Me siento increiblemente feliz de la forma tan sencilla y amigable por la cual Gestick me ha beneficiado para mi micro empresa"
+                <p>"Me siento increiblemente feliz de la forma tan sencilla y amigable por la cual Gestick me ha
+                    beneficiado para mi micro empresa"
                 </p>
             </div>
         </div>
 
         <!-- third card -->
-        <section class="cards-banner-two">
+        <!--
+            <section class="cards-banner-two">
             <div class="content">
                 <h2>Conoce Nuestros Planes</h2>
-                <!-- lorem 30 -->
+                 lorem 30 
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui laudantium id quam magni accusantium,
                     veritatis, ipsam labore, reprehenderit dolore repudiandae nemo sint deserunt! Suscipit facilis qui
                     inventore
@@ -139,8 +162,13 @@
                 <a href="#" class="btn">Explora<i class="fas fa-chevron-right"></i></a>
             </div>
         </section>
+-->
 
-        <!-- Follow -->
+
+
+
+        <!--
+
         <section class="social">
             <p>Siguenos En Nuetras Redes Sociales</p>
             <div class="links">
@@ -154,9 +182,18 @@
         </section>
     </div>
 
-    <!-- Footer Links -->
     <div class="footer-links">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#f3f4f5" fill-opacity="1"
+                d="M0,128L60,154.7C120,181,240,235,360,218.7C480,203,600,117,720,117.3C840,117,960,203,1080,218.7C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
+                class="wavess">
+            </path>
+        </svg>
         <div class="footer-container">
+
+
+
             <ul>
                 <li>
                     <a href="">
@@ -196,15 +233,77 @@
         </div>
     </div>
 
-    <!-- Footer -->
+
+
     <footer class="footer">
         <h3>Gestick ©2022</h3>
     </footer>
 
-    <!-- Scroll Reveal -->
-    <script src="https://unpkg.com/scrollreveal"></script>
-    <script src="JS/index.js"></script>
-    <script src="JS/Script.js"></script>
+        -->
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+
+
+                    <!--
+
+                                         <div class="footer-col">
+                        <h4>company</h4>
+                        <ul>
+                            <li><a href="#">about us</a></li>
+                            <li><a href="#">our services</a></li>
+                            <li><a href="#">privacy policy</a></li>
+                            <li><a href="#">affiliate program</a></li>
+                        </ul>
+                    </div>
+                    -->
+
+
+
+
+                    <div class="footer-col">
+                        <h4>Planes</h4>
+                        <ul>
+                            <li><a href="#">plan 1</a></li>
+                            <li><a href="#">Plan 2</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Sobre nosotros</h4>
+                        <ul>
+                            <li><a href="SobreNosotros.html">Nosotros</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Siguenos en</h4>
+                        <div class="social-links">
+                            <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                            <a href="https://mx.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Scroll Reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="JS/index.js"></script>
+        <script src="JS/Script.js"></script>
 
 </body>
 
