@@ -4,7 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Gestick/inicio</title>
-  <link rel="stylesheet" type="text/css" href="CSS/style_logins.css">
+  <link rel="stylesheet" type="text/css" href="CSS/style_login.css">
+  <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
 </head>
 
 <body>
@@ -51,28 +52,21 @@
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
               <span class="padding-bottom--15">Iniciar sesion empleado</span>
-              <form id="stripe-login">
+              <form id="stripe-login" action="/logEmpleado" method="post">
                 <div class="field padding-bottom--24">
-                  <label for="email">Id Empleado</label>
-                  <input type="email" name="email">
+                  <label for="id">Id Empleado</label>
+                  <input type="id" name="id" id="id">
                 </div>
                 <div class="field padding-bottom--24">
                   <div class="grid--50-50">
                     <label for="password">Contraseña</label>
-                    <div class="reset-pass">
-                      <a href="#">Olvidaste tu contraseña?</a>
-                    </div>
                   </div>
-                  <input type="password" name="password">
+                  <input type="password" name="password" id="password">
                 </div>
                 <div class="field field-checkbox padding-bottom--24 flex-flex align-center">
                 </div>
                 <div class="field padding-bottom--24">
-                  <!--  <a href="Productos_Index.html"><input type="submit" name="submit" value="Continue">
-                  </a>-->
-
-                  
-
+                  <input type="submit" name="submit">
                 </div>
                 <div class="field">
                   <a class="ssolink" href="#">Usar cuenta de google</a>
@@ -83,14 +77,28 @@
           <div class="footer-link padding-top--24">
             <span>No tienes cuenta? <a href="Registro_Empleado.html">Registrate</a></span>
             <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
-              <span><a href="#">Contacto</a></span>
-              <span><a href="#">Terminos y privacidad</a></span>
+              <span><a href="Contactanos.html">Contacto</a></span>
+              <span><a href="#" class="terms__cta">Terminos y privacidad</a></span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+  <!-- Copiar y Pegar la section y el script -->
+  <section class="modal ">
+    <div class="modal__container">
+        <div class="part_container">
+            <h2 class="modal__title">Terminos y Condiciones</h2>
+            </div>
+            <hr>
+        <div class="part_container">
+          <p class="modal__paragraph">GESTICK es una web para papelerías, creada por GESTICK Team, antes de acceder a ella debes saber que tendrás que llenar un formulario con datos básicos, además para usar la página DEBES PERMITIR el acceso automático a la cámara y la galería fotográfica de tu dispositivo.   Todos los productos ofrecidos en la aplicación tienen un costo que deberá cancelar electrónicamente en el caso de desear adquirirlos.</p>
+        </div>
+        <a href="#" class="modal__close">Aceptar terminos y condiciones</a> 
+    </div>
+</section>
+<script src="JS/modal-term-cond.js"></script>
   <!---------------------------------------------------------------------->
 
 </body>

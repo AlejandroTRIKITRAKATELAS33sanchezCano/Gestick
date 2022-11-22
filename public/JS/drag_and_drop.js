@@ -1,8 +1,23 @@
 const dragArea = document.querySelector('.drag-area');
 const dragText = document.querySelector('.headerD');
 
+let button = document.querySelector('.buttonD');
+let input = document.querySelector('#ImaP');
+
 let file;
 
+button.onclick = () =>{
+    input.click();
+}
+
+//Cuando se busca
+
+input.addEventListener('change', function(){
+    file = this.files[0];
+    dragArea.classList.add('active');
+    displayFile();
+
+})
 
 //cuando el archibo está en el drag area
 
@@ -29,7 +44,11 @@ dragArea.addEventListener('drop', (event) =>{
 
     file = event.dataTransfer.files[0];
     //console.log(file);
+    displayFile();
+    
+});
 
+function displayFile(){
     let fileType = file.type;
     
     //console.log(fileType);
@@ -52,4 +71,4 @@ dragArea.addEventListener('drop', (event) =>{
         alert('Este Archivo no es una imagen');
         dragArea.classList.remove('active');
     }
-})
+}

@@ -6,9 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
-    <link rel="stylesheet" href="CSS/style.css">
     <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="stylesheet" href="CSS/style.css">
     <title>Creacion De Productos</title>
 </head>
 
@@ -26,22 +25,26 @@
                     <span class="headerD">
                         Arrastra y suelta
                     </span>
+                    <span class="headerD">O <span class="buttonD">Seleciona Un Archivo</span></span>
+                    <input type="file" hidden name="ImaP" id="ImaP">
                     <span class="support">Se acepta: JPEG, JPG, PNG</span>
                 </div>
             </div>
             <div class="formulario-Producto">
-                <form action="" method="post">
+                <form action="/addProduct" method="post">
                     <h3>Crea tu Producto</h3>
                     <label for="nombreP">Nombre de tu Producto</label>
                     <input type="text" id="nombreP" name="nombreP">
                     <label for="PrecioP">Precio</label>
                     <input type="number" id="PrecioP" name="PrecioP">
+                    <label for="ExisP">Existencias</label>
+                    <input type="number" id="ExisP" name="ExisP">
                     <label for="Marcas">Marca</label>
                     <select name="Marcas" id="Marcas">
                         <option value="">Ejemplo de Marcas</option>
                     </select>
                     <label for="DescripciónP">Descripción</label>
-                    <textarea name="DescripciónP" rows="3"></textarea>
+                    <input name="DescripciónP" type="text" id="DesPro"></input>
                     <input type="submit" class="enviar">
                 </form>
             </div>
