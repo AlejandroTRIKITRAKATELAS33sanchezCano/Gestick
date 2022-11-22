@@ -447,6 +447,7 @@ textarea:focus {
 }
 
 input[type="text"],
+textarea,
 input[type="password"],
 input[type="number"],
 input[type="email"],
@@ -1164,13 +1165,45 @@ ul {
     min-height: 100vh;
     flex-direction: column;
     background: #e0eafc;
+    height: 100%;
+    width: 100vw;
+    
+}
+
+.contenedroAgregar{
+
+    background-color: #fff;
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.formulario-Producto form{
+    
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.formulario-Producto label,h3{
+    color: #000;
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
 }
 
 .Drag_Drop{
+    margin: 50px;
     max-width: 650px;
     width: 100%;
     padding: 30px;
     background: #fff;
+    border: 5px solid #000;
     border-radius: 20px;
     box-shadow: rgba(149, 157, 165, 0.2);
 }
@@ -1189,6 +1222,16 @@ ul {
     flex-direction: column;
     margin: 10px;
 
+}
+
+.drag-area.active{
+    border: 2px solid #1683ff;
+}
+
+.drag-area img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .drag-area .icon{

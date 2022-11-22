@@ -7,26 +7,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <title>Creacion De Productos</title>
 </head>
 
 <body>
     <header></header>
     <section id="pruebas">
-        <div class="Drag_Drop">
-            <h3>Sube Tus Imagenes De Muestra</h3>
-            <div class="drag-area">
-                <div class="icon">
-                    <i class="fa-solid fa-image"></i>
+        <div class="contenedroAgregar">
+            <div class="Drag_Drop">
+                <h3>Sube Tus Imagenes De Muestra</h3>
+                <div class="drag-area">
+                    <div class="icon">
+                        <i class="fa-solid fa-image"></i>
+                    </div>
+    
+                    <span class="headerD">
+                        Arrastra y suelta
+                    </span>
+                    <span class="support">Se acepta: JPEG, JPG, PNG</span>
                 </div>
-
-                <span class="headerD">
-                    Arrastra y suelta
-                </span>
-                <span class="headerD">
-                    o <span class="buttonD">Seleciona Tu Archivo</span>
-                </span>
-                <span class="support">Se acepta: JPEG, JPG, PNG</span>
+            </div>
+            <div class="formulario-Producto">
+                <form action="" method="post">
+                    <h3>Crea tu Producto</h3>
+                    <label for="nombreP">Nombre de tu Producto</label>
+                    <input type="text" id="nombreP" name="nombreP">
+                    <label for="PrecioP">Precio</label>
+                    <input type="number" id="PrecioP" name="PrecioP">
+                    <label for="Marcas">Marca</label>
+                    <select name="Marcas" id="Marcas">
+                        <option value="">Ejemplo de Marcas</option>
+                    </select>
+                    <label for="DescripciónP">Descripción</label>
+                    <textarea name="DescripciónP" rows="3"></textarea>
+                    <input type="submit" class="enviar">
+                </form>
             </div>
         </div>
     </section>
