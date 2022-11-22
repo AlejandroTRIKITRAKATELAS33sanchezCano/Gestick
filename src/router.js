@@ -21,7 +21,6 @@ rout.get("/contactUs", (req,res)=>{
 
 rout.get("/profile", (req,res)=>{
     sesion = req.session;
-    console.log(req.session.userid);
     if(req.session.userid){
         res.send("Necesito el html del perfil<a href=/logOut>Cerrar sesión</a>");
     }else{
@@ -41,8 +40,8 @@ rout.get("/SignSucced", (req,res)=>{
     res.sendFile("/public/registro_Exitoso.html",{root:"."})
 });
 
-rout.get("/SignAdmin", (req,res)=>{
-    res.send("Necesito los html");
+rout.get("/SignEmp", (req,res)=>{
+    res.sendFile("/public/Registro_Empleado.html",{root:"."});
 });
 
 rout.post("/logEmpleado",function(req,res,next){
@@ -56,7 +55,7 @@ rout.post("/logEmpleado",function(req,res,next){
                 if(req.body.password == row.Contraseña){
                     sesion = req.session;
                     sesion.userid = req.body.user;
-                    res.redirect("/")
+                    res.redirect("/stock");
                     return next();
                 }
                 res.redirect("/logEmp");
@@ -66,20 +65,46 @@ rout.post("/logEmpleado",function(req,res,next){
     });
 });
 
+rout.post("/signEmpleado", (req,res)=>{
+    var id = Math.floor(Math.random()*1000000);
+    db.query(`select idEmpleado from Empleado;`, (error,results)=>{
+        if(error){
+            console.log(error);
+            res.redirect("/SignEmp");
+        }else{
+            id = Math.floor(Math.random()*1000000);
+            var existingId = true;
+            while(existingId){
+                existingId = false;
+                results.forEach((row)=>{
+                    if(row.idEmpleado == id){
+                        existingId = true;
+                        id = Math.floor(Math.random()*1000000);
+                    }
+                })
+            }
+        }
+    });
+    var setString = `insert into Empleado (idEmpleado, Nombre, Contraseña, email, Administrador_idAdministrador) values (${id},"${req.body.name}","${req.body.PW}","carloscw0304", 1)`;
+    db.query(setString, (error)=>{
+        if(error){
+            console.log(error);
+        }
+    })
+    res.render("../public/registro_Exitoso",{id:id})
+});
+
 rout.post("/logAdministrador",(req,res, next)=>{
     db.query(`select * from administrador where nombre = "${req.body.user}" ;`,(error,results)=>{
-        console.log(results)
+        console.log("a");
         if (error){
-            console.log(error);
             res.redirect("/logAdmin");
         }else{
-            console.log(req.body.password)
             results.forEach((row)=>{
-                console.log(row);
                 if(req.body.password == row.Contraseña){
                     sesion = req.session;
                     sesion.userid = req.body.user;
-                    res.redirect("/");
+                    res.redirect("/stock");
                     return next();
                 }
                 res.redirect("/logAdmin");
@@ -90,10 +115,12 @@ rout.post("/logAdministrador",(req,res, next)=>{
 });
 
 rout.get("/logOut",(req,res)=>{
-    console.log(req.session);
     sesion = req.session.destroy();
-    console.log(req.session);
     res.redirect("/");
+})
+
+rout.get("/stock", (req,res)=>{
+    res.sendFile("/public/inventario.html", {root:"."});
 })
 
 rout.get("/addProduct",(req,res)=>{

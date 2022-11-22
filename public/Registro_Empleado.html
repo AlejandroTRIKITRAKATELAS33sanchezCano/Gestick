@@ -33,26 +33,27 @@
                 
                 <div class="formulario">
                     <h1>Registrate</h1>
-                    <form action="registro_Exitoso.html" id="formulario_v">
+                    <form action="/signEmpleado" method="post" id="formulario_v">
+                        <div id="invalmsg"></div>
                         <div class="input-contenedor">
                             <i class="fa-solid fa-user icon"></i>
-                            <input type="text" placeholder="Apellido Paterno">
+                            <input type="text" name="AP" id="AP" placeholder="Apellido Paterno">
                         </div>
                         <div class="input-contenedor">
                             <i class="fas fa-key icon"></i>
-                            <input type="text" placeholder="Apellido Materno">
+                            <input type="text" name="AM" id="AM" placeholder="Apellido Materno">
                         </div>
                         <div class="input-contenedor">
                             <i class="fas fa-key icon"></i>
-                            <input type="text" placeholder="Nombres(s)">
+                            <input type="text" name="name", id="name" placeholder="Nombres(s)">
                         </div>
                         <div class="input-contenedor">
                             <i class="fas fa-key icon"></i>
-                            <input type="password" placeholder="Contraseña">
+                            <input type="password" name="PW" id="PW" placeholder="Contraseña">
                         </div>
                         <div class="input-contenedor">
                             <i class="fas fa-key icon"></i>
-                            <input type="password" placeholder="Repetir Contraseña">
+                            <input type="password" name="PWC", id="PWC" placeholder="Repetir Contraseña">
                         </div>
                         <input type="submit" value="Registrar Empleado" class="enviar">
                     </form>
@@ -60,5 +61,6 @@
             </div>
         </div>
     </section>
+    <script src="js/signValidation.js" type="text/javascript"></script>
 </body>
 </html>
