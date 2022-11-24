@@ -51,10 +51,10 @@
         <div class="formbg-outer">
           <div class="formbg">
             <div class="formbg-inner padding-horizontal--48">
-              <span class="padding-bottom--15">Iniciar sesion empleado</span>
-              <form id="stripe-login" action="/logEmpleado" method="post">
+              <span class="padding-bottom--15">Iniciar sesion Administrador</span>
+              <form id="stripe-login" action="/logAdministrador" method="post">
                 <div class="field padding-bottom--24">
-                  <label for="id">Id Empleado</label>
+                  <label for="id">Id Administrador</label>
                   <input type="id" name="id" id="id">
                 </div>
                 <div class="field padding-bottom--24">
@@ -73,7 +73,8 @@
             </div>
           </div>
           <div class="footer-link padding-top--24">
-            <span>¿Eres administrador? <a href="/logAdmin">Haz clic aquí</a></span>
+            <span>¿Eres empleado? <a href="/logEmp">Haz clic aquí</a></span>
+            <span>¿No tienes Cuenta? <a href="/signAdmin">Registrate aquí</a></span>
             <div class="listing padding-top--24 padding-bottom--24 flex-flex center-center">
               <span><a href="/contactUs">Contacto</a></span>
               <span><a href="#" class="terms__cta">Terminos y privacidad</a></span>

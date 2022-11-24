@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
+    <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
+    <title>Empleados</title>
+</head>
+
+<body>
+    <header>
+        <h2 class="logo">GESTICK</h2>
+        <input type="checkbox" id="check">
+        <label for="check" class="mostrar-menu">
+            &#8801
+        </label>
+        <nav class="menu">
+            <a href="/Consulta-Empleados">Empleados</a>
+            <a href="/stock">Productos</a>
+            <div class="headercontainer">
+                <div class="userss">
+                    <a href="#" class="profile__cta"><i class="fa-solid fa-circle-user"></i></a>
+                </div>
+            </div>
+            <label for="check" class="esconder-menu">
+                &#215
+            </label>
+        </nav>
+    </header>
+    <div class="Header-Opciones">
+
+        <h2 class="logo2">Empleados</h2>
+        <nav class="menu">
+            <div class="buscar">
+                <input type="text" onkeyup="search_product()" placeholder="Busca tu Empleado" requiredid="inputbuscar" />
+                <div class="btn">
+                    <i class="fas fa-search icon2"></i>
+                </div>
+            </div>
+            <a href="Registrar_Empleado" id="BotonActivo" class="Separado">Agregar Empleado</a>
+        </nav>
+    </div>
+
+    <section class="tabla-escala">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Contraseña</th>
+                    <th>Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <%if(table){%>
+                    <%table.forEach((row)=>{%>
+                        <tr> 
+                            <td data-label="ID"><%=row.idEmpleado%></td>
+                            <td data-label="Producto">
+                                <p><%=row.ENombre%> </p>
+                            </td>
+                            <td data-label="Apellido Paterno"><%=row.EApellido_Paterno%></td>
+                            <td data-label="Apellido Materno"><%=row.EApellido_Materno%></td>
+                            <td data-label="Contraseña"><%=row.EContraseña%></td>
+                            <td data-label="Editar">
+                                <button href="/stock" id="BotonActivo" class="Separado" >Eliminar Producto</button>
+                            </td>
+                        </tr>
+                    <%})%>
+                <%}else{%>
+                    <tr>
+                        <td colspan="3">No Tiene Empleados</td>
+                    </tr>
+                <%}%> 
+            </tbody>
+        </table>
+    </section>
+    <section class="modal_1">
+        <div class="modal__container_1">
+            <div class="part_container">
+                <img src="CSS/IMG/avatar_male_man_people_person_profile_user_icon_123199.png">
+                <h2 class="modal__title modales"><%=nombre%></h2>
+            </div>
+            <hr>
+            <div class="part_container">
+                <img src="CSS/IMG/1904675-configuration-edit-gear-options-preferences-setting-settings_122525.png">
+                <a href="#" class="profile__cta_2 modales">Configuración</a>
+            </div>
+            <hr>
+            <div class="part_container">
+                <img src="CSS/IMG/4115235-exit-logout-sign-out_114030.png">
+                <a href="/logOut" class="profile__cta_2 modales">Cerrar sesión</a>
+            </div>
+            <a href="#" class="modal__close_1"><img class="modal_img"
+                    src="CSS/IMG/cancel_close_delete_exit_logout_remove_x_icon_123217 (1).png"></a>
+        </div>
+    </section>
+    <section class="modal_2">
+        <div class="modal__container_2">
+            <div class="part_container">
+                <img src="CSS/IMG/avatar_male_man_people_person_profile_user_icon_123199.png">
+                <h2 class="modal__title modales">Perfil</h2>
+            </div>
+            <hr>
+            <div class="part_container">
+                <p class="modal_paragraph">Apellido paterno: <span class="modales"><%=AP%></span></p>
+            </div>
+            <div class="part_container">
+                <p class="modal_paragraph">Apellido materno: <span class="modales"><%=AM%></span></p>
+            </div>
+            <div class="part_container">
+                <p class="modal_paragraph">Nombre(s): <span class="modales"><%=nombre%></span></p>
+            </div>
+            <div class="part_container">
+                <p class="modal_paragraph">ID: <span class="modales"><%=ID%></span></p>
+            </div>
+            <a href="#" class="modal__close_2"><img
+                    src="CSS/IMG/arrow_arrows_back_direction_left_navigation_right_icon_123237.png"></a>
+        </div>
+    </section>
+    <script src="JS/modal_1.js"></script>
+    <script src="JS/modal_2.js"></script>
+</body>
+
+</html>
