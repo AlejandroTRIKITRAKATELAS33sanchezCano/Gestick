@@ -345,7 +345,7 @@ rout.post("/modProduct",(req,res)=>{
 });
 
 rout.post("/modifyProduct",(req,res)=>{
-    res.render("Modificar_Producto.ejs",{idP:req.body.idP, PNombre:req.body.PNombre, Descripcion: req.body.Descripcion, Existencias: req.body.Existencias, Precio: req.body.Precio, Marca: req.body.MNombre})
+    res.render("Modificar_Producto.ejs",{idP:req.body.idP, PNombre:req.body.PNombre, Descripcion: req.body.Descripcion, Existencias: req.body.Existencias, Precio: req.body.Precio, Marca: req.body.MNombre, img:req.body.img})
 });
 
 rout.post("/deleteProduct",(req,res)=>{
