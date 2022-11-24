@@ -39,6 +39,63 @@ header {
     align-items: center;
 }
 
+
+.button {
+    position: relative;
+    top: -2rem;
+    left: 30%;    
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #01A7C2;
+    color: #fff;
+    font-size: 15px;
+    border: 1px solid #fff;
+    border-radius: 0.5rem;
+    text-align: center;
+    font-size: 1.1rem;
+    padding: 20px;
+    width: 8rem;
+    height: 3.6rem;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin: 5px;
+    text-align: center;
+    align-items: center;
+}
+
+.button span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+
+
+
+
+
 .logo {
     text-transform: uppercase;
     color: #fff;
@@ -294,8 +351,12 @@ textarea:focus {
     outline: none;
     box-shadow: 3px 0px 30px rgba(68, 143, 201, 0.749);
 }
+#password{
+    width: 100%;
+}
 
 input[type="text"],
+input[type="id"],
 input[type="password"],
 input[type="number"],
 input[type="email"],

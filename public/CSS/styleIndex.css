@@ -73,7 +73,7 @@ ul {
     color: #ffffff;
     text-decoration: none;
     font-weight: 300;
-    color: #bbbbbb;
+    color: #ffffff;
     display: block;
     transition: all 0.3s ease;
 }
@@ -363,15 +363,6 @@ hr {
     right: 0;
 }
 
-
-
-
-
-
-
-
-
-
 /* SHOWCASE */
 
 .btn {
@@ -385,6 +376,19 @@ hr {
     font-size: 15px;
     border: 1px solid #fff;
 }
+.btn2{
+    
+    cursor: pointer;
+    display: inline-block;
+    border: 0;
+    font-weight: bold;
+    padding: 10px 20px;
+    background: #2f3640;
+    color: #000;
+    font-size: 15px;
+    border: 1px solid #2f3640;
+}
+
 
 
 .btn:hover {
@@ -613,4 +617,206 @@ hr {
     .footer-links .footer-container ul {
         text-align: center;
     }
+}
+
+/*-------------------------------------------------Modal planes----------------------*/
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+/* Modal Content */
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 35%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close2 {
+	color: white;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+  }
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.close2:hover,
+.close2:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: #01A7C2;
+  color: rgb(0, 0, 0);
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #01A7C2;
+  color: white;
+}
+
+/* Add Animation */
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+
+/*-----------------------------------------------------------------------------------------*/
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create three columns of equal width */
+.columns {
+  float: left;
+  width: 33.3%;
+  padding: 8px;
+}
+
+/* Style the list */
+.price {
+  list-style-type: none;
+  border: 1px solid #eee;
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+/* Add shadows on hover */
+.price:hover {
+  box-shadow: 0 8px 12px 0 rgba(0,0,0,0.2)
+}
+
+/* Pricing header */
+.price .header {
+  background-color: #111;
+  color: white;
+  font-size: 25px;
+}
+
+/* List items */
+.price li {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  padding: 20px;
+  text-align: center;
+}
+
+/* Grey list item */
+.price .grey {
+  background-color: #eee;
+  font-size: 20px;
+}
+
+/* The "Sign Up" button */
+.button {
+  background-color: #283845;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+
+/* Change the width of the three columns to 100%
+(to stack horizontally on small screens) */
+@media only screen and (max-width: 600px) {
+  .modal-body {
+    width: 100%;
+  }
+
+  }
+h5 {
+    margin-left: 15px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 50px;
+    line-height: 100px;
+    color: #283845;
+    text-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
+    text-align: left;
+}
+  h1 {
+    font-style: normal;
+    font-weight: 300;
+    font-size: 100px;
+    line-height: 155px;
+    color: #01A7C2;
+    text-shadow: 2px 8px 8px rgb(0 0 0 / 25%);
+    text-align: center;
+}
+h3 {
+    font-style: normal;
+    font-weight: 50;
+    font-size: 38px;
+    line-height: 2;
+    color: #ffffff;
+    text-shadow: 2px 8px 8px rgb(0 0 0 / 25%);
+    text-align: center;
+}
+
+  header {
+    height: 100px;
+    background: #283845;
+    padding: 0 50px;
+    color: aliceblue;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }

@@ -117,7 +117,7 @@ header{
     color: #000000;
 }
 .header-contactUs{
-    padding-left: 25%;
+    padding-left: 20.5%;
     font-size: 32px;
     text-decoration: solid;
     text-align:unset;
@@ -137,7 +137,6 @@ header{
     border: #000000;
     border-style: solid;
     border-radius: 20px;
-    box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
 }
 
 input{
@@ -180,7 +179,6 @@ input:hover{
     background:#FFFFFF;
     border-radius:10px;
     padding:10px;
-    box-shadow: 0 1.25em 1.8em rgba(8, 21, 65, 0.25);
     font-family: 'Fredoka', sans-serif;
 }
 .form-style-7 ul{
@@ -300,7 +298,7 @@ input:hover{
     margin-bottom: 10px;
     padding-bottom: 1em;
     position: absolute;
-    top: 198%;
+    top: 92.5rem;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100px;
