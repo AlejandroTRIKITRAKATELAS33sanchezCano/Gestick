@@ -23,10 +23,10 @@ USE `Gestick` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Gestick`.`Administrador` (
   `idAdministrador` INT NOT NULL AUTO_INCREMENT,
-  `Apellido_Paterno` VARCHAR(45) NOT NULL,
-  `Apellido_Materno` VARCHAR(45) NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
-  `Contraseña` VARCHAR(45) NOT NULL,
+  `AApellido_Paterno` VARCHAR(45) NOT NULL,
+  `AApellido_Materno` VARCHAR(45) NOT NULL,
+  `ANombre` VARCHAR(45) NOT NULL,
+  `AContraseña` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idAdministrador`))
 ENGINE = InnoDB;
 
@@ -36,10 +36,10 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Gestick`.`Empleado` (
   `idEmpleado` INT NOT NULL AUTO_INCREMENT,
-  `Apellido_Paterno` VARCHAR(45) NOT NULL,
-  `Apellido_Materno` VARCHAR(45) NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
-  `Contraseña` VARCHAR(45) NOT NULL,
+  `EApellido_Paterno` VARCHAR(45) NOT NULL,
+  `EApellido_Materno` VARCHAR(45) NOT NULL,
+  `ENombre` VARCHAR(45) NOT NULL,
+  `EContraseña` VARCHAR(45) NOT NULL,
   `Administrador_idAdministrador` INT NOT NULL,
   PRIMARY KEY (`idEmpleado`, `Administrador_idAdministrador`),
   INDEX `fk_Empleado_Administrador1_idx` (`Administrador_idAdministrador` ASC) VISIBLE,
@@ -56,7 +56,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `Gestick`.`Marca` (
   `idMarca` INT NOT NULL AUTO_INCREMENT,
-  `Nombre` VARCHAR(45) NOT NULL,
+  `MNombre` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idMarca`))
 ENGINE = InnoDB;
 
@@ -67,10 +67,10 @@ ENGINE = InnoDB;
 
 CREATE TABLE IF NOT EXISTS `Gestick`.`Producto` (
   `idProducto` INT NOT NULL,
-  `Nombre` VARCHAR(45) NOT NULL,
+  `PNombre` VARCHAR(45) NOT NULL,
   `Precio` VARCHAR(45) NOT NULL,
-  `Descripcion` VARCHAR(300) NULL,
-  `Imagen` LONGTEXT NULL,
+  `Descripcion` VARCHAR(300) NULL DEFAULT NULL,
+  `Imagen` VARCHAR(200) NULL DEFAULT NULL,
   `Administrador_idAdministrador` INT NOT NULL,
   `Marca_idMarca` INT NOT NULL,
   `Existencias` INT NOT NULL DEFAULT 0,
@@ -89,13 +89,13 @@ CREATE TABLE IF NOT EXISTS `Gestick`.`Producto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-INSERT INTO `Administrador` (`Apellido_Paterno`,`Apellido_Materno`,`Nombre`, `Contraseña`) VALUES ('Sanche','Cano','_TRIKITRAKATELAS','Triki' );
-INSERT INTO `Empleado` (`Apellido_Paterno`,`Apellido_Materno`,`Nombre`, `Contraseña`,`idAdministrador`) VALUES ('Titos','Vazquez','Carlos','123',1 );
+INSERT INTO `Administrador` (`AApellido_Paterno`,`AApellido_Materno`,`ANombre`, `AContraseña`) VALUES ('Sanche','Cano','_TRIKITRAKATELAS','Triki' );
+INSERT INTO `Empleado` (`EApellido_Paterno`,`EApellido_Materno`,`ENombre`, `EContraseña`,`Administrador_idAdministrador`) VALUES ('Titos','Vazquez','Carlos','123',1 );
+INSERT INTO `Producto` (`idProducto`,`PNombre`,`Precio`,`Descripcion`,`Imagen`,`Administrador_idAdministrador`,`Marca_idMarca`,`Existencias`) VALUES (1,'',33,'','',1,1,33);
 
 select * from `Marca`;
 describe `Marca`;
@@ -109,107 +109,111 @@ describe `Administrador`;
 select * from `Empleado`;
 describe `Empleado`;
 
+SELECT * from `Producto` a INNER JOIN `Marca` b on a.Marca_idMarca = b.idMarca; 
+
+SELECT * from `Empleado` a INNER JOIN `Administrador` b on a.Administrador_idAdministrador = b.idAdministrador INNER JOIN `Producto` c on a.Administrador_idAdministrador = c.idProducto WHERE idEmpleado = 1;
+
 SET FOREIGN_KEY_CHECKS =1;
 
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (1,'Seawhite');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (2,'The Copper Collection');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (3,'Noted In Style');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (4,'Chroma Stationery');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (5,'ARK Colour Design');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (6,'DERWENT ');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (7,'Leathersmith Of London');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (8,'The Drawing Tool Company');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (9,'FILOFAX');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (10,'Strathmore Paper');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (11,'Staedtler');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (12,'Faber-Castell');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (13,'Schwan Stabilo');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (14,'Kaweco');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (15,'Diplomat Pen Company');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (16,'MUJI');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (17,'Sachihata');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (18,'Sakura');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (19,'Midori');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (20,'Sticky Note');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (21,'Connor');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (22,'Sugar Paper');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (23,'Crane Currency');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (24,'Rifle Paper Co.');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (25,'Wild Horse Press');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (26,'Typo');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (27,'Arches');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (28,'Karst Stone Paper');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (29,'Maped');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (30,'Canson');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (31,'Paper Source');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (32,'Yellow Owl Workshop');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (33,'Mohawk Fine Papers');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (34,'CP Stationery');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (35,'Present & Correct');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (36,'Fred Aldous');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (37,'Hato');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (38,'Papersmiths');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (39,'Tom Pigeon');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (40,'Before Breakfast');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (41,'The Completist');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (42,'Ola');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (43,'The Journal Shop');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (44,'Nook');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (45,'Mark + Fold');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (46,'Colours May Vary');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (47,'Papergang');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (48,'The Stationer');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (49,'Happy Dashery');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (50,'Meticulous Ink');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (51,'Yoseka Stationery');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (52,'Wrap');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (53,'Counterprint');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (54,'Papier');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (55,'Choosing Keeping');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (56,'A.T. Cross Company');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (57,'Sheaffer Pen Corporation');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (58,'Mont Blanc');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (59,'Minted');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (60,'Paper Culture');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (61,'Artifact Uprising');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (62,'Papier');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (63,'Twigs Paper');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (64,'Em & Friends');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (65,'Quilling Card');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (66,'Botanical Paperworks');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (67,'Oblation Papers & Press');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (68,'Papersource');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (69,'Etsy');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (70,'Present & Correct');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (71,'Chase and Wonder');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (72,'Sugar Paper');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (73,'Milligram');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (74,'McNally Jackson');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (75,'Scriptura');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (76,'Appointed');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (77,'Mrs. John L Strong ');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (78,'Katie Leamon');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (79,'Bic');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (80,'JetPens');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (81,'Norma');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (82,'Greer Chicago');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (83,' iBent');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (84,'Fredaldous');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (85,'Choosing Keeping');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (86,'Yoobi');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (87,'Appree');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (88,'Colorverse');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (89,'Dailylike');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (90,'Dong-A');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (91,'Hwarang');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (92,'Iconic');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (93,'Livework');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (94,'Monami');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (95,'Suatelier');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (96,'Outtakes');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (97,'Kokuyo');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (98,'Pilot');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (99,'Zebra');
-INSERT INTO `Marca` (`idMarca`,`Nombre`) VALUES (100,'Uni');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (1,'Seawhite');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (2,'The Copper Collection');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (3,'Noted In Style');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (4,'Chroma Stationery');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (5,'ARK Colour Design');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (6,'DERWENT ');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (7,'Leathersmith Of London');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (8,'The Drawing Tool Company');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (9,'FILOFAX');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (10,'Strathmore Paper');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (11,'Staedtler');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (12,'Faber-Castell');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (13,'Schwan Stabilo');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (14,'Kaweco');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (15,'Diplomat Pen Company');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (16,'MUJI');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (17,'Sachihata');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (18,'Sakura');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (19,'Midori');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (20,'Sticky Note');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (21,'Connor');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (22,'Sugar Paper');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (23,'Crane Currency');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (24,'Rifle Paper Co.');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (25,'Wild Horse Press');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (26,'Typo');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (27,'Arches');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (28,'Karst Stone Paper');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (29,'Maped');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (30,'Canson');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (31,'Paper Source');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (32,'Yellow Owl Workshop');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (33,'Mohawk Fine Papers');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (34,'CP Stationery');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (35,'Present & Correct');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (36,'Fred Aldous');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (37,'Hato');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (38,'Papersmiths');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (39,'Tom Pigeon');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (40,'Before Breakfast');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (41,'The Completist');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (42,'Ola');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (43,'The Journal Shop');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (44,'Nook');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (45,'Mark + Fold');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (46,'Colours May Vary');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (47,'Papergang');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (48,'The Stationer');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (49,'Happy Dashery');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (50,'Meticulous Ink');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (51,'Yoseka Stationery');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (52,'Wrap');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (53,'Counterprint');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (54,'Papier');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (55,'Choosing Keeping');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (56,'A.T. Cross Company');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (57,'Sheaffer Pen Corporation');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (58,'Mont Blanc');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (59,'Minted');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (60,'Paper Culture');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (61,'Artifact Uprising');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (62,'Papier');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (63,'Twigs Paper');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (64,'Em & Friends');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (65,'Quilling Card');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (66,'Botanical Paperworks');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (67,'Oblation Papers & Press');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (68,'Papersource');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (69,'Etsy');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (70,'Present & Correct');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (71,'Chase and Wonder');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (72,'Sugar Paper');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (73,'Milligram');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (74,'McNally Jackson');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (75,'Scriptura');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (76,'Appointed');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (77,'Mrs. John L Strong ');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (78,'Katie Leamon');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (79,'Bic');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (80,'JetPens');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (81,'Norma');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (82,'Greer Chicago');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (83,' iBent');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (84,'Fredaldous');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (85,'Choosing Keeping');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (86,'Yoobi');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (87,'Appree');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (88,'Colorverse');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (89,'Dailylike');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (90,'Dong-A');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (91,'Hwarang');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (92,'Iconic');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (93,'Livework');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (94,'Monami');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (95,'Suatelier');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (96,'Outtakes');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (97,'Kokuyo');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (98,'Pilot');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (99,'Zebra');
+INSERT INTO `Marca` (`idMarca`,`MNombre`) VALUES (100,'Uni');
 
 select * from Marca;
