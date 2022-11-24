@@ -49,7 +49,7 @@
                 Registrate <i class="fas fa-chevron-right"></i>
             </a>
              -->
-            <a href="/Registrarse_Admin">
+            <a href="/signAdmin">
                 <button class="button2" type="submit">
                     <span>Registrate</span>
                 </button>
@@ -107,11 +107,35 @@
                 <!--                    <a href="#" class="btn">Explora<i class="fas fa-chevron-right"></i></a>
 -->
 
-                <button class="button" type="submit">
+                <button class="button" type="submit" id="myBtn">
                     <span>Explora</span>
                 </button>
+                <div id="myModal" class="modal">
 
 
+                    <!-- Modal content -->
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h3>Plan 1</h3>
+                        </div>
+                        <div class="modal-body">
+                            <ul class="price">
+                                <li class="header">Basico</li>
+                                <li class="grey">$400MX / Mes</li>
+                                <li>Creación de Puntos De Venta Ilimitados</li>
+                                <li>10 Empleados</li>
+                                <li>50 Productos</li>
+                                <li>5GB de Almacenamiento</li>
+                                <li class="grey"><a href="/signAdmin"
+                                        class="button2">Ingresar</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -148,126 +172,110 @@
                 </p>
             </div>
         </div>
-
-        <!-- third card -->
-        <!--
-            <section class="cards-banner-two">
-            <div class="content">
-                <h2>Conoce Nuestros Planes</h2>
-                 lorem 30 
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut qui laudantium id quam magni accusantium,
-                    veritatis, ipsam labore, reprehenderit dolore repudiandae nemo sint deserunt! Suscipit facilis qui
-                    inventore
-                    consequatur fugit.</p>
-                <a href="#" class="btn">Explora<i class="fas fa-chevron-right"></i></a>
-            </div>
-        </section>
--->
-
-
-
-
-        <!--
-
-        <section class="social">
-            <p>Siguenos En Nuetras Redes Sociales</p>
-            <div class="links">
-                <a href="https://facebook.com">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="https://linkdin.com">
-                    <i class="fab fa-linkedin"></i>
-                </a>
-            </div>
-        </section>
-    </div>
-
-    <div class="footer-links">
-        
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#f3f4f5" fill-opacity="1"
-                d="M0,128L60,154.7C120,181,240,235,360,218.7C480,203,600,117,720,117.3C840,117,960,203,1080,218.7C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
-                class="wavess">
-            </path>
-        </svg>
-        <div class="footer-container">
-
-
-
-            <ul>
-                <li>
-                    <a href="">
-                        <h3>Conocenos</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Sobre Nosotros</a>
-                </li>
-                <li>
-                    <a href="#">Contactanos</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#">
-                        <h3>Nuestros Planes</h3>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Plan 1</a>
-                </li>
-                <li>
-                    <a href="#">Plan 2</a>
-                </li>
-                <li>
-                    <a href="#">Plan 3</a>
-                </li>
-            </ul>
-            <ul>
-                <li>
-                    <a href="#">
-                        <h3>Aviso De Privacidad</h3>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-
-
-
-    <footer class="footer">
-        <h3>Gestick ©2022</h3>
-    </footer>
-
-        -->
-
-
         <footer class="footer">
             <div class="container">
                 <div class="row">
-
-
-                    <!--
-
-                                         <div class="footer-col">
-                        <h4>company</h4>
-                        <ul>
-                            <li><a href="#">about us</a></li>
-                            <li><a href="#">our services</a></li>
-                            <li><a href="#">privacy policy</a></li>
-                            <li><a href="#">affiliate program</a></li>
-                        </ul>
-                    </div>
-                    -->
-
-
-
-
                     <div class="footer-col">
                         <h4>Planes</h4>
                         <ul>
-                            <li><a href="#">plan 1</a></li>
-                            <li><a href="#">Plan 2</a></li>
+                            <li><a href="#" id="btn-AddDate" class=" btn btn-xs btn-success" data-toggle="modal"
+                                    data-target="#AddDate">
+                                    Plan1
+                                </a>
+                                <div class="modal fade" id="AddDate" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Titulo</h4>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+
+                                                        <h3>Plan 1</h3>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="price">
+                                                            <li class="header">Basico</li>
+                                                            <li class="grey">$400MX / Mes</li>
+                                                            <li>Creación de Puntos De Venta Ilimitados</li>
+                                                            <li>10 Empleados</li>
+                                                            <li>50 Productos</li>
+                                                            <li>5GB de Almacenamiento</li>
+                                                            <li class="grey"><a href="/signAdmin"
+                                                                    class="button2">Ingresar</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                                    crossorigin="anonymous"></script>
+
+                            </li>
+                            <li><a href="#" id="btn-AddDate" class=" btn btn-xs btn-success" data-toggle="modal"
+                                    data-target="#AddDate2">
+                                    Plan2
+                                </a>
+                                <div class="modal fade" id="AddDate2" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                    aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                <h4 class="modal-title" id="myModalLabel">Titulo</h4>
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h3>Plan 2</h3>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <ul class="price">
+                                                            <li class="header">Pro</li>
+                                                            <li class="grey">$600 / Mes</li>
+                                                            <li>Puntos De Venta Ilimitados</li>
+                                                            <li>Creación de E-Commerce</li>
+                                                            <li>Empleados Ilimitados</li>
+                                                            <li>Productos Ilimitados</li>
+                                                            <li>Personalización</li>
+                                                            <li>60GB de Almacenamiento</li>
+                                                            <li class="grey"><a href="/signAdmin"
+                                                                    class="button2">Ingresar</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+                                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                                    integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                                    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+
+                            </li>
+
+
                         </ul>
                     </div>
                     <div class="footer-col">
@@ -281,7 +289,8 @@
                         <div class="social-links">
                             <a href="https://es-la.facebook.com/"><i class="fab fa-facebook-f"></i></a>
                             <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
-                            <a href="https://wa.me/5610336646?text=Hola%20Este%20Soy%20Un%20Cliente%20De%20Gestick%20"><i class="fab fa-whatsapp"></i></a>
+                            <a href="https://wa.me/5610336646?text=Hola%20Este%20Soy%20Un%20Cliente%20De%20Gestick%20"><i
+                                    class="fab fa-whatsapp"></i></a>
                             <a href="https://mx.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -304,6 +313,7 @@
         <script src="https://unpkg.com/scrollreveal"></script>
         <script src="JS/index.js"></script>
         <script src="JS/Script.js"></script>
+        <script src="JS/Modal.js"></script>
 
 </body>
 

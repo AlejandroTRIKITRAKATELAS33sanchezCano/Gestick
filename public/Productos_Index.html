@@ -16,34 +16,6 @@
 </head>
 
 <body>
-
-
-
-<!--
-
-HEADER
-
-    <header>
-        <img src="CSS/IMG/Decoración/Logo.png" alt="GESTICK">
-        <input type="checkbox" id="check">
-        <label for="check" class="mostrar-menu">
-            &#8801
-        </label>
-        <nav class="menu">
-            <div class="headercontainer">
-                <div class="userss">
-                    <a href="#" class="profile__cta"><i class="fa-solid fa-circle-user"></i></a>
-                </div>
-            </div>
-            <label for="check" class="esconder-menu">
-                &#215
-            </label>
-        </nav>
-    </header>
-
--->
-
-
 <header>
     <img src="CSS/IMG/Decoración/Logo.png" alt="GESTICK">
     <input type="checkbox" id="check">
@@ -64,60 +36,23 @@ HEADER
         </label>
     </nav>
 </header>
-
-
-
-
-
     <br><br><br><br>
-
     <h2 id="Titulo-1">PRODUCTOS:</h2>
     <br>
     <h3 id="Titulo-2">Selecciona el producto a vender</h3>
-
+    
+    <!--ESTE LO CAMBIÉ 24/11/22-->
     <div class="buscar">
-        <input type="text" placeholder="      Busca tu producto" required id="inputbuscar" />
+        <input type="text" placeholder="Busca tu producto" required id="inputbuscar" onkeyup="search_product()"/>
 
         <div class="btn2">
             <i class="fas fa-search icon"></i>
 
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <center>
 
         <main class="cardscontainer">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            <!----------------------->
-
-
             <div class="sell">
 
                 <input type="checkbox" id="btn-modal">
@@ -141,26 +76,6 @@ HEADER
 
 
             </div>
-
-
-
-
-
-
-
-            <!--
-
-
-
-
-
-
-
-
-            -->
-
-
-
 
             <div class="espaciado">
             </div>
@@ -211,7 +126,6 @@ HEADER
                     <i class="gg-math-minus" id="less"></i>
                 </div>
             </a>
-
 
             <a class="card">
                 <div class="cont-tarjeta__logo">
@@ -281,7 +195,6 @@ HEADER
                 </div>
             </a>
 
-
             <a class="card">
                 <div class="cont-tarjeta__logo">
 
@@ -350,10 +263,8 @@ HEADER
                     <i class="gg-math-minus" id="less"></i>
                 </div>
             </a>
-
         </main>
     </center>
-
     <section class="modal_1">
         <div class="modal__container_1">
             <div class="part_container">
@@ -397,13 +308,10 @@ HEADER
                     src="CSS/IMG/arrow_arrows_back_direction_left_navigation_right_icon_123237.png"></a>
         </div>
     </section>
-
     <script src="JS/Script.js"></script>
     <script src="JS/search.js"></script>
     <script src="JS/main.js"></script>
     <script src="JS/modal_1.js"></script>
     <script src="JS/modal_2.js"></script>
-
 </body>
-
 </html>

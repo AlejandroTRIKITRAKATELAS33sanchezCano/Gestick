@@ -1,53 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
-    <link rel="stylesheet" href="CSS/styleSign.css">
     <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <title>GESTICK</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Creacion De Productos</title>
 </head>
-<body id="Black">
-    <div class="centrado"></div>
-    <header id="black">
-        <center><h2 class="logo">GESTICK</h2></center>
-        <input type="checkbox" id="check">
-       
-    </header>
-    <section>
-        <div class="iniciar_sesion">
-            <div class="parametros">
-                
-                <div class="login-box">
-                    <!-------------------------------------------------------------------->
-                    <div class="contenedorR"><center>
-                    <div class="left">
-                      <left><h1>Registrarse</h1></left> 
-                      
-                      <input type="text" name="username" placeholder="Usuario" />
-                      <input type="text" name="email" placeholder="E-mail" />
-                      <input type="password" name="password" placeholder="Contraseña" />
-                      <input type="password" name="password2" placeholder="Repetir contraseña" />
-                      
-                      <input type="submit" name="signup_submit" value="Registrarme" />
-                    </div>
-                    <div class="or">O</div>
-                    <div class="right">
-                      <span class="loginwith">Registrarse con: <br /></span>
-                      
-                      
-                      <button class="social-signin google">Google</button>
-                      <button class="social-signin whatsapp">Whatsapp</button>
-                    </div>
-                    
-                  </div></center>
-                </div>
-                  <!---------------------------------------------------------------------->
+
+<body>
+    <header></header>
+    <section id="pruebas">
+        <div class="contenedroAgregar">
+            <div class="formulario-Producto">
+                <form action="/Registrar_Empleado" method="post">
+                    <h3>Registra Tu Empleado</h3>
+                    <label for="AP">Apellido Paterno</label>
+                    <input type="text" id="AP" name="AP">
+                    <label for="AM">Apellido Materno</label>
+                    <input type="text" id="AM" name="AM">
+                    <label for="Name">Nombre</label>
+                    <input type="text" id="Name" name="Name">
+                    <input type="submit" class="enviar">
+                </form>
             </div>
         </div>
     </section>
+    <script src="JS/drag_and_drop.js"></script>
 </body>
 </html>

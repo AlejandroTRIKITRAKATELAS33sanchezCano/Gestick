@@ -21,17 +21,17 @@
                     <div class="icon">
                         <i class="fa-solid fa-image"></i>
                     </div>
-    
                     <span class="headerD">
                         Arrastra y suelta
                     </span>
                     <span class="headerD">O <span class="buttonD">Seleciona Un Archivo</span></span>
-                    <input type="file" hidden name="ImaP" id="ImaP">
+                    
                     <span class="support">Se acepta: JPEG, JPG, PNG</span>
                 </div>
             </div>
             <div class="formulario-Producto">
-                <form action="/addProduct" method="post">
+                <form action="/addProduct" method="post" enctype="multipart/form-data">
+                    <input type="file" hidden name="ImaP" id="ImaP">
                     <h3>Crea tu Producto</h3>
                     <label for="nombreP">Nombre de tu Producto</label>
                     <input type="text" id="nombreP" name="nombreP">
@@ -41,10 +41,111 @@
                     <input type="number" id="ExisP" name="ExisP">
                     <label for="Marcas">Marca</label>
                     <select name="Marcas" id="Marcas">
-                        <option value="">Ejemplo de Marcas</option>
+                        <option value="1">Seawhite</option>
+                        <option value="2">The Copper Collection</option>
+                        <option value="3">Noted In Style</option>
+                        <option value="4">Chroma Stationery</option>
+                        <option value="5">ARK Colour Design</option>
+                        <option value="6">DERWENT</option>
+                        <option value="7">Leathersmith Of London</option>
+                        <option value="8">The Drawing Tool Company</option>
+                        <option value="9">FILOFAX</option>
+                        <option value="10">Strathmore Paper</option>
+                        <option value="11">Staedtler</option>
+                        <option value="12">Faber-Castell</option>
+                        <option value="13">Schwan Stabilo</option>
+                        <option value="14">Kaweco</option>
+                        <option value="15">Diplomat Pen Company</option>
+                        <option value="16">MUJI</option>
+                        <option value="17">Sachihata</option>
+                        <option value="18">Sakura</option>
+                        <option value="19">Midori</option>
+                        <option value="20">Sticky Note</option>
+                        <option value="21">Connor</option>
+                        <option value="22">Sugar Paper</option>
+                        <option value="23">Crane Currency</option>
+                        <option value="24">Rifle Paper Co.</option>
+                        <option value="25">Wild Horse Press</option>
+                        <option value="26">Typo</option>
+                        <option value="27">Arches</option>
+                        <option value="28">Karst Stone Paper</option>
+                        <option value="29">Maped</option>
+                        <option value="30">Canson</option>
+                        <option value="31">Paper Source</option>
+                        <option value="32">Yellow Owl Workshop</option>
+                        <option value="33">Mohawk Fine Papers</option>
+                        <option value="34">CP Stationery</option>
+                        <option value="35">Present & Correct</option>
+                        <option value="36">Fred Aldous</option>
+                        <option value="37">Hato</option>
+                        <option value="38">Papersmiths</option>
+                        <option value="39">Tom Pigeon</option>
+                        <option value="40">Before Breakfast</option>
+                        <option value="41">The Completist</option>
+                        <option value="42">Ola</option>
+                        <option value="43">The Journal Shop</option>
+                        <option value="44">Nook</option>
+                        <option value="45">Mark + Fold</option>
+                        <option value="46">Colours May Vary</option>
+                        <option value="47">Papergang</option>
+                        <option value="48">The Stationer</option>
+                        <option value="49">Happy Dashery</option>
+                        <option value="50">Meticulous Ink</option>
+                        <option value="51">Yoseka Stationery</option>
+                        <option value="52">Wrap</option>
+                        <option value="53">Counterprint</option>
+                        <option value="54">Papier</option>
+                        <option value="55">Choosing Keeping</option>
+                        <option value="56">A.T. Cross Company</option>
+                        <option value="57">Sheaffer Pen Corporation</option>
+                        <option value="58">Mont Blanc</option>
+                        <option value="59">Minted</option>
+                        <option value="60">Paper Culture</option>
+                        <option value="61">Artifact Uprising</option>
+                        <option value="62">Papier</option>
+                        <option value="63">Twigs Paper</option>
+                        <option value="64">Em & Friends</option>
+                        <option value="65">Quilling Card</option>
+                        <option value="66">Botanical Paperworks</option>
+                        <option value="67">Oblation Papers & Press</option>
+                        <option value="68">Papersource</option>
+                        <option value="69">Etsy</option>
+                        <option value="70">Present & Correct</option>
+                        <option value="71">Chase and Wonder</option>
+                        <option value="72">Sugar Paper</option>
+                        <option value="73">Milligram</option>
+                        <option value="74">McNally Jackson</option>
+                        <option value="75">Scriptura</option>
+                        <option value="76">Appointed</option>
+                        <option value="77">Mrs. John L Strong</option>
+                        <option value="78">Katie Leamon</option>
+                        <option value="79">Bic</option>
+                        <option value="80">JetPens</option>
+                        <option value="81">Norma</option>
+                        <option value="82">iBent</option>
+                        <option value="83">Fredaldous</option>
+                        <option value="84">Choosing Keeping</option>
+                        <option value="85">Yoobi</option>
+                        <option value="86">Appree</option>
+                        <option value="87">Yoobi</option>
+                        <option value="88">Colorverse</option>
+                        <option value="89">Dailylike</option>
+                        <option value="90">Dong-A</option>
+                        <option value="91">Hwarang</option>
+                        <option value="92">Iconic</option>
+                        <option value="93">Livework</option>
+                        <option value="94">Monami</option>
+                        <option value="95">Suatelier</option>
+                        <option value="96">Outtakes</option>
+                        <option value="97">Kokuyo</option>
+                        <option value="98">Pilot</option>
+                        <option value="99">Zebra</option>
+                        <option value="100">Uni</option>
                     </select>
                     <label for="DescripciónP">Descripción</label>
-                    <input name="DescripciónP" type="text" id="DesPro"></input>
+                    <input name="DesPro" type="text" id="DesPro">
+                    <input type="text" hidden name="ImagenSRC" id="ImagenSRC">
+                    <input type="text" hidden name="FileNameIMG" id="FileNameIMG">
                     <input type="submit" class="enviar">
                 </form>
             </div>

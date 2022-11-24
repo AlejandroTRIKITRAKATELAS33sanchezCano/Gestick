@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
     <script src="https://kit.fontawesome.com/8042365e74.js" crossorigin="anonymous"></script>
-    <title>Inventario</title>
+    <title>Empleados</title>
 </head>
 
 <body>
@@ -33,15 +33,15 @@
     </header>
     <div class="Header-Opciones">
 
-        <h2 class="logo2">Productos</h2>
+        <h2 class="logo2">Empleados</h2>
         <nav class="menu">
             <div class="buscar">
-                <input type="text" onkeyup="search_product()" placeholder="Busca tu producto" requiredid="inputbuscar" />
+                <input type="text" onkeyup="search_product()" placeholder="Busca tu Empleado" requiredid="inputbuscar" />
                 <div class="btn">
                     <i class="fas fa-search icon2"></i>
                 </div>
             </div>
-            <a href="Agregar_Producto.html" id="BotonActivo" class="Separado">Agregar Producto</a>
+            <a href="Agregar_Producto.html" id="BotonActivo" class="Separado">Agregar Empleado</a>
         </nav>
     </div>
 
@@ -49,23 +49,20 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>Producto</th>
-                    <th>Estado</th>
-                    <th>Inventario</th>
-                    <th>Marca</th>
+                    <th>Nombre</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Contraseña</th>
                 </tr>
             </thead>
             <tbody>
                 <tr> 
                     <td data-label="Producto">
-                        <div class="producto-texto">
-                            <img src="" alt="Aquí va un producto">
-                            <p>Nombre del producto</p>
-                        </div>
+                        <p>Nombre del Empleado</p>
                     </td>
-                    <td data-label="Estado">Estado</td>
-                    <td data-label="Inventario">Existencias</td>
-                    <td data-label="Marca">Marca</td>
+                    <td data-label="Apellido Paterno">Apellido Paterno Del Empleado</td>
+                    <td data-label="Apellido Materno">Apellido Materno Del Empleado</td>
+                    <td data-label="Contraseña">Contraseña</td>
                 </tr>
             </tbody>
         </table>

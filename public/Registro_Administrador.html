@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="CSS/IMG/Decoración/Logo.png">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/index.css">
+    <link href="CSS/registro.css" rel="stylesheet">
+
+    <title>Registrate</title>
+</head>
+
+<body>
+    <div id="contenedor_carga">
+        <div id="carga"></div>
+    </div>
+    <script>
+        window.onload = function(){
+            var contenedor = document.getElementById('contenedor_carga');
+
+            contenedor.style.visibility = 'hidden';
+            contenedor.style.opacity = '0';
+        }
+    </script>
+    <section class="contact-box">
+        <div class="row no-gutters bg-dark">
+            <div class="col-xl-5 col-lg-12 register-bg">
+                <div class="position-absolute testiomonial p-4">
+                    <h3 class="font-weight-bold text-light">Crea Tus Propio Inventario Y Punto De Venta</h3>
+                    <p class="lead text-light">Organiza tus Empleados y tiempo</p>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-12 d-flex">
+                <div class="container align-self-center p-6">
+                    <h1 class="font-weight-bold mb-3">Crea tu cuenta gratis</h1>
+                    <p class="text-muted mb-5">Ingresa la siguiente información para registrarte.</p>
+
+                    <form action="/signAdministrador" method="post">
+                        <div class="form-row mb-2">
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Apellido Paterno <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="Tu Apellido Paterno" id="AP" name="AP" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label class="font-weight-bold">Apellido Materno <span class="text-danger">*</span></label>
+                                <input type="text" class="form-control" placeholder="Tu Apellido Materno" id="AM" name="AM"required>
+                            </div>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Nombre(s) <span
+                                    class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Ingresa tu(s) nombre(s)" id="Name" name="Name"required>
+                        </div>
+                        <div class="form-group mb-3">
+                            <label class="font-weight-bold">Contraseña <span class="text-danger">*</span></label>
+                            <input type="password" class="form-control" placeholder="Ingresa una contraseña" id="PW" name="PW" required>
+                        </div>
+                        <div class="form-group mb-5">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox">
+                                <label class="form-check-label text-muted">Al seleccionar esta casilla aceptas nuestro <a href="#" class="terms__cta">aviso de privacidad y los términos y condiciones</a></label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary width-100">Regístrate</button>
+                    </form>
+                    <small class="d-inline-block text-muted mt-5">Todos Los Derechos Reservados | © GESTICK 2022 </small>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="modal ">
+        <div class="modal__container">
+            <div class="part_container">
+                <h2 class="modal__title">Terminos y Condiciones</h2>
+                </div>
+                <hr>
+            <div class="part_container">
+                <p class="modal__paragraph">GESTICK es una web para papelerías, creada por GESTICK Team, antes de acceder a ella debes saber que tendrás que llenar un formulario con datos básicos, además para usar la página DEBES PERMITIR el acceso automático a la cámara y la galería fotográfica de tu dispositivo.   Todos los productos ofrecidos en la aplicación tienen un costo que deberá cancelar electrónicamente en el caso de desear adquirirlos.</p>
+            </div>
+            <a href="#" class="modal__close">Aceptar terminos y condiciones</a> 
+        </div>
+    </section>
+    <script src="JS/modal-term-cond.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
