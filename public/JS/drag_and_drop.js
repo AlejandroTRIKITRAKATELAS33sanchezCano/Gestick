@@ -1,8 +1,11 @@
+
 const dragArea = document.querySelector('.drag-area');
 const dragText = document.querySelector('.headerD');
 
+let inputIMG = document.querySelector('#ImagenSRC')
 let button = document.querySelector('.buttonD');
 let input = document.querySelector('#ImaP');
+let nombreArchivo = document.querySelector('#FileNameIMG')
 
 let file;
 
@@ -50,6 +53,7 @@ dragArea.addEventListener('drop', (event) =>{
 
 function displayFile(){
     let fileType = file.type;
+    let nombres = file.name;
     
     //console.log(fileType);
     //console.log("Archivo dejado");
@@ -62,7 +66,12 @@ function displayFile(){
         fileReader.onload = ()=>{
 
             let fileURL = fileReader.result;
-            //console.log(fileURL)
+            
+            inputIMG.value= fileType.split('/').pop();
+            nombreArchivo.value = nombres;
+
+            console.log(inputIMG.value)
+            console.log(nombreArchivo.value)
             let imgTag = `<img src = "${fileURL}" alt="">`;
             dragArea.innerHTML = imgTag;
         }
@@ -72,3 +81,4 @@ function displayFile(){
         dragArea.classList.remove('active');
     }
 }
+
