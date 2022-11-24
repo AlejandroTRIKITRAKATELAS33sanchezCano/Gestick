@@ -19,6 +19,7 @@ app.use(session({
     resave:false
 }));
 app.use(cookieParser());
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 

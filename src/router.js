@@ -127,12 +127,9 @@ rout.get("/stock", (req,res)=>{
                     console.log(error);
                 }else if (results){
                     data = {nombre: sesion.name, AP:sesion.AP, AM: sesion.AM, ID: sesion.userid,Contraseña: sesion.PW, table:results};
-                    console.log("a");
-                    console.log(data)
                     res.render("./inventario", data);
                 }else{
                     data = {nombre: sesion.name, AP:sesion.AP, AM: sesion.AM, ID: sesion.userid, Contraseña: sesion.PW ,table:null}
-                    console.log("b")
                     res.render("./inventario", data);
                 }
             })
@@ -335,12 +332,30 @@ rout.post("/addProduct",upload.single('ImaP'),(req,res)=>{
     res.redirect("/stock")
 });
 
-rout.get("/modifyProduct",(req,res)=>{
-
+rout.post("/modProduct",(req,res)=>{
+    console.log(req.body)
+    db.query(`update producto SET PNombre = "${req.body.nombreP}", Descripcion = "${req.body.DesPro}", Precio =${req.body.PrecioP}, Existencias =${req.body.ExisP}, Marca_idMarca =${req.body.Marcas} where idProducto = ${req.body.idP}`,(error)=>{
+        if(error){
+            console.log(error);
+            res.redirect("/stock");
+        }else{
+            res.redirect("/stock");
+        }
+    });
 });
 
-rout.get("/deleteProduct",(req,res)=>{
+rout.post("/modifyProduct",(req,res)=>{
+    res.render("Modificar_Producto.ejs",{idP:req.body.idP, PNombre:req.body.PNombre, Descripcion: req.body.Descripcion, Existencias: req.body.Existencias, Precio: req.body.Precio, Marca: req.body.MNombre})
+});
 
+rout.post("/deleteProduct",(req,res)=>{
+    console.log(`DELETE from Producto where idProducto = ${req.body.idP}`)
+    db.query(`DELETE from Producto where idProducto = ${req.body.idP}`,(error)=>{
+        if(error){
+            console.log(error);
+        }
+        res.redirect("stock");
+    })
 });
 
 

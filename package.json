@@ -20,10 +20,12 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "http": "^0.0.1-security",
+    "http-session": "^1.0.4-BETA",
     "mime-types": "^2.1.35",
     "multer": "^1.4.5-lts.1",
     "mysql2": "^2.3.3",
     "nodemon": "^2.0.20",
-    "parse-database-url": "^0.3.0"
+    "parse-database-url": "^0.3.0",
+    "session": "^0.1.0"
   }
 }

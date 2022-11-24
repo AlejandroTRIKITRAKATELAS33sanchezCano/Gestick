@@ -51,13 +51,14 @@
                     <th>Imagen</th>
                     <th>Nombre</th>
                     <th>Descripción</th>
+                    <th>Precio</th>
                     <th>Inventario</th>
                     <th>Marca</th>
                     <th>Opciones</th>
                 </tr>
             </thead>
             <tbody>
-                <%if(table){%>
+                <%if(table.length > 0){%>
                     <%table.forEach((row)=>{%>
                         <tr>
                             <td data-label="ID"><%=row.idProducto%></td> 
@@ -67,10 +68,23 @@
                             <td data-label="Nombre"><%=row.PNombre%></td>
                             <td data-label="Descripción"><%=row.Descripcion%> </td>
                             <td data-label="Inventario"><%=row.Existencias%></td>
+                            <td data-label="Precio"><%=row.Precio%></td>
                             <td data-label="Marca"><%=row.MNombre%></td>
                             <td data-label="Editar">
                                 <div class="producto-texto">
-                                    <button href="/stock" id="BotonActivo" class="Separado" >Eliminar Producto</button>
+                                    <form action="/modifyProduct" method="post">
+                                        <input type="hidden" name="idP" value=<%=row.idProducto%>>
+                                        <input type="hidden" name="PNombre" value=<%=row.PNombre%>>
+                                        <input type="hidden" name="Descripcion" value=<%=row.Descripcion%>>
+                                        <input type="hidden" name="Existencias" value=<%=row.Existencias%>>
+                                        <input type="hidden" name="Precio" value=<%=row.Precio%>>
+                                        <input type="hidden" name="MNombre" value=<%=row.MNombre%>>
+                                        <button type="submit" id="BotonActivo" class="Separado" >Editar Producto</button>
+                                    </form>
+                                    <form action="/deleteProduct" method="post">
+                                        <input type="hidden" name="idP" value=<%=row.idProducto%>>
+                                        <button type="submit" id="BotonActivo" class="Separado" >Eliminar Producto</button>
+                                    </form>
                                 </div>
                             </td>
                         </tr>
