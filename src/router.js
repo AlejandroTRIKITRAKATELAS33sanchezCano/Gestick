@@ -87,7 +87,7 @@ rout.get("/logAdmin", (req,res)=>{
 });
 
 rout.post("/logAdministrador",(req,res, next)=>{
-    db.query(`select * from administrador where idAdministrador = "${req.body.id}" ;`,(error,results)=>{
+    db.query(`select * from Administrador where idAdministrador = "${req.body.id}" ;`,(error,results)=>{
         if (error){
             sesion = req.session;
             sesion.txterr = "Error en el servidor. Vuelva a intentar más tarde";
@@ -252,7 +252,7 @@ rout.get("/logEmp", (req,res)=>{
 });
 
 rout.post("/logEmpleado",function(req,res){
-    db.query(`select * from empleado where idEmpleado = ${req.body.id} ;`,(error,results)=>{
+    db.query(`select * from Empleado where idEmpleado = ${req.body.id} ;`,(error,results)=>{
         if (error){
             sesion = req.session;
             sesion.txterr = "Hubo un error en el servidor, vuelva a intentarlo más tarde.";
