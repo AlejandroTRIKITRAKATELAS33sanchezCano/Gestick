@@ -323,7 +323,7 @@ rout.post("/addProduct",upload.single('ImaP'),(req,res)=>{
     var fecha = Date.now();
     console.log(urlIma)
     var id = Math.floor(Math.random()*1000000);
-    var setString = `insert into Producto (idProducto, PNombre, Precio, Descripcion, Imagen, Administrador_idAdministrador, Marca_idMarca, Existencias) values (${id},"${req.body.nombreP}",${req.body.PrecioP},"${req.body.DesPro}","uploads/1669269164694.jpeg",${sesion.userid}, ${req.body.Marcas}, ${req.body.ExisP});`
+    var setString = `insert into Producto (idProducto, PNombre, Precio, Descripcion, Imagen, Administrador_idAdministrador, Marca_idMarca, Existencias) values (${id},"${req.body.nombreP}",${req.body.PrecioP},"${req.body.DesPro}","uploads/${req.body.FileNameIMG}",${sesion.userid}, ${req.body.Marcas}, ${req.body.ExisP});`
     db.query(setString, (error)=>{
         if(error){
             console.log(error);
