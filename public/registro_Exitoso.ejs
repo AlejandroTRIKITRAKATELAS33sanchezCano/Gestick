@@ -31,9 +31,10 @@
                 <i id="icono-empleado" class="fa-solid fa-user-tie"></i>
                 <h3>Id del Administrador: <%=id%></h3>
             </div>
-            <a href="/logAdmin">
-                <input type="submit" value="Siguiente" class="enviar" id="siguiente-registro-ex">
-            </a>
+                <input type="submit" value="Siguiente" class="enviar" id="siguiente-registro-ex" onclick="pay()">
+                <script type="text/javascript">
+                    function pay() { window.location.href = "http://192.168.20.194:3000"; } ;
+                </script>
         </div>
     </section>
 </body>
